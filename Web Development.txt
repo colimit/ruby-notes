@@ -16,7 +16,7 @@ Ruby: make an array that has all values common to two arrays, excluding duplicat
 Ruby: delete all items that appear in array2 from array1	[1,1,2,2,3,3,4,5] - [1,2,4]<div>=&gt;[3,3,5]</div>	
 add x to the end of my_array	my_array &lt;&lt; x	
 concatenate array1 and array2	array1+array2	
-Ruby double all members of an array in place	my_array.collect! {|x| 2*x}	
+Ruby double all members of an array in place	my_array.map! {|x| 2*x}	
 Ruby add one to all memebers in an array, creating a new array	a=my_array.collect {|x| x+1}	
 Ruby make an array of all unordered pairs in [1,2,3,4]	[1,2,3,4].combination(2).to_a<div>=&gt; [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]</div>	
 Ruby: repeatedly iterate through elements of an array FOREVER	[1,2,3,4].cycle {|x| puts x}	
@@ -67,6 +67,16 @@ Write a method that takes an array and returns a new array with the 0th and 3rd 
 change bar.txt to foo.txt	mv bar.txt foo.txt	
 Ruby: say I make a Matrix class, and pos=[i,j]. I want to do matrix[pos] and get the corresponding entry. What do?	class Matrix<div>&nbsp; def [](pos)</div><div>&nbsp; &nbsp; row, column = pos</div><div>&nbsp; &nbsp; self[row][column]</div><div>&nbsp; end</div><div>end</div>	
 Ruby: make an array of the first 10 square numbers using Array.new	Array.new(10) { |index| (index +1 ) ** 2 }	
-What is the behavior of Hash.new with a block?	Hash.new {|hash,key| &nbsp; &nbsp; } #calls block when key is not found	
+What is the behavior of Hash.new with a block?	Hash.new {|hash,key| &nbsp; &nbsp; } #calls block when key is not found, but <b>does not assign the result to key</b>	
 p_string is a method that returns nil or a string. one line idiom for computing length of string , otherwise nil	(str = p_string) &amp;&amp; str.length	
 Ruby: make the cartesian product of two arrays (e.g [1,2] and [3,4] produce [[1,3],[1,4],[2,3],[2,4]])	[1,2,3].product([4,5,6])	
+Textmate: make a method quickly	type the name then shift-enter	
+textmate best way to open file	command-t then type file name	
+textmate add comment to block	command /	
+textmate: indent selection	command ]	
+textmate: unindent selection	command [	
+textmate: uncomment selection	command /	
+textmate: quickest way to replace all	1 select the text&nbsp;<div>2 command-e uses it for search</div><div>3 command-option f selects all</div><div>4 type the new thing</div>	
+Ruby: find the value of the first even number in my_enumerable	my_enumerable.find {|x| x.even?}	
+Textmate: you pressed escape to autocomplete, but the wrong thing comes up. What do?	keep pressing escape	
+I made a paren, but two were made with the cursor in between (). What is the quickest way to fix?	back - delete, fn-delete on laptop	
