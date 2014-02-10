@@ -1,82 +1,93 @@
-Ruby: pop last element from my_array, store to a	a=my_array.pop	
-Ruby: pop first element of an array	a=my_array.shift	
-ruby pop element at position i of an array	a=my_array.delete_at(i)	
-ruby delete elements of value x from array	my_array.delete(x) &nbsp; &nbsp; (returns x)	
-Ruby create new hash with default value x	foo=Hash.new(x)	
-Ruby test if a hash has a key x	my_hash.has_key?(x)	
-Ruby: test if my_hash has x as a stored value	my_hash.has_value?(x)	
-Ruby: test if my_hash is empty	my_has.empty?	
-Ruby find the 3rd thru 10th element of my_array	my_array[2..9]	
-Ruby: pop element at key i from a hash	a=my_hash.delete(i)<div>returns my_hash[i] and deletes this entry</div>	
-Ruby method that called by My_class.new	initialize	
-Ruby: make a new My_class object	My_class.new(foo)	
-Ruby find &nbsp;number of even integers in my_array	my_array.count {|i| i % 2 ==0}	
-Ruby: make an array that is [1,2,1,2....1,2] repeated 40 times	[1,2]*40	
-Ruby: make an array that has all values common to two arrays, excluding duplicates	[3,1,1,2]&amp;[1,1,3,3,4]<div>=&gt;[3,1]</div>	
-Ruby: delete all items that appear in array2 from array1	[1,1,2,2,3,3,4,5] - [1,2,4]<div>=&gt;[3,3,5]</div>	
-add x to the end of my_array	my_array &lt;&lt; x	
-concatenate array1 and array2	array1+array2	
-Ruby double all members of an array in place	my_array.map! {|x| 2*x}	
-Ruby add one to all memebers in an array, creating a new array	a=my_array.collect {|x| x+1}	
-Ruby make an array of all unordered pairs in [1,2,3,4]	[1,2,3,4].combination(2).to_a<div>=&gt; [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]</div>	
-Ruby: repeatedly iterate through elements of an array FOREVER	[1,2,3,4].cycle {|x| puts x}	
-convienant way to iterate from 0 to my_array.length-1	my_array.each_index	
-test whether my_array is empty	my_array.empty?	
-find the first index in my_array which holds x	my_array.index(x)	
-find the first index in my_array whose corresponding value is even	my_array.index {|x| x%2==0}	
-delete all even elements from my_array	my_array.reject! {|x| x%2 == 0}	
-reverse the order of my_array in place	my_array.reverse!	
-select four items at random from my_array	my_array.sample(4)	
-remove all duplicate values from my_array in place	my_array.uniq!	
-put the elements of my_array in a random order	my_array.shuffle!	
-What evals as false in Ruby?	nil and false	
-find out if str contains "Rub"&nbsp;	str.include?("Rub")	
-find first index of str at which "foo" appears	str.index("foo")	
-Ruby: find the unique values in an array (or enumerable) that are even numbers	my_array.find_all {|x| x%2==0}.uniq &nbsp; &nbsp; or<div><span style=" font-style: normal; font-weight: normal;">my_array.select {|x| x%2==0}.uniq</span></div><div><br /></div>	
-Ruby: Test whether all elements of my_array are even	my_array.all? {|x| x % 2 == 0 }&nbsp;	
-get an entry from my_hash with default 20	my_hash.fetch(key,20)	
-expression which returns 4 if x==3 and "goop" otherwise	x==3 ? 4 : "goop"	
-check whether i is in (1..10)	(1..10) === i &nbsp; &nbsp;(other way around doesn't work)	
-try three different methods of object a in order, setting c to the first non-nil thing that is returned (and skipping the remaining calls).	c ||= a.foo<div>c ||= a.bar</div><div>c ||= a.baz</div>	
-Do a bunch of operations in a row to c, returning nil if you get nil at any point	<div>c= 1</div>c &amp;&amp;= f(c)<div>c &amp;&amp;= g(c)</div><div>c &amp;&amp;= h(c)</div>	
-find the index of the first occurence of regex in string using an operator	string =~ regex	
-pop a key value pair from a hash	my_hash.shift &nbsp;(returns a [key,value] pair)	
-reverse lookup for a hash	my_hash.key(value) =&gt; a key for which my_hash[key]==value	
-Convert a=[["a",3],["b",5]] to {"a" =&gt; 3, "b" =&gt;5}	Hash[a]	
-Ruby make a method with add(3,4,5)==12 and add(3,2)==5&nbsp;	<div>def add(*list)</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>list.reduce(0,:+)</div><div>end</div>	
-ruby suppose we have a function add that adds its arguments, e.g. add(3,4,5)=12. How to find the sum of my_array?	add(*my_array)	
-make multiples(num), a method that returns an Enumerable object that yields all positive integers which are multiples of num	def multiples(num)<div>&nbsp;&nbsp; guys=Enumerator.new do |yielder|</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;i=1</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;loop {yielder&lt;&lt;i*num ; i+=1}</div><div>&nbsp;&nbsp; end</div><div>end</div><div><br /><div><br /><div><br /></div></div></div>	
-find ascii code of 'a'	'a'.ord	
-convert 65 to a char using ascii code	65.chr	
-fill an array of length 100, each entry of index i is a random integer between 0 and i	Array.new(100)&nbsp;{|i| rand(i+1)}<div>or (0...100).map &nbsp;&nbsp;{|i| rand(i+1)}</div><div><br /></div>	
-find the element of [1,5,4,3,2] whose cosine is highest	[1,5,4,3,2].max_by {|x| Math.cos(x)}	
-multiply list1 and list2 pointwise	list1.zip(list2).map {|a,b| a*b}<div><br /></div><div>Note that list1.zip(list2) {|a,b| a*b} calls the block for each pair, but returns nill</div>	
-sort my_array in place by absolute value	my_array.sort_by! {|x| x*x}	
-remove whitespace from the front and back of a string	my_string.strip<div>" &nbsp; &nbsp; hello &nbsp; &nbsp; ".strip &nbsp; =&gt; "hello"</div><div>strip! &nbsp; is in place version</div>	
-Ruby: my_array is an array of strings. Short way to reverse every string in my_array without explicitly writing a block.	my_array.map!(&amp;:reverse)	
-inside a class, define four methods called "plus", "minus", "times", and "divide" which call "operate" with input :+, :-, :*, :/ respectively	<div><span class="Apple-tab-span" style="white-space:pre"> </span>opers={:plus =&gt; :+,:minus =&gt; :-,:times =&gt; :*,:divide =&gt; :/ }</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>opers.each do |key,value|</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span>define_method(key) {operate(value)}</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>end</div>	
-Ruby: add a method to Array which computes the sum of an array	class Array<div>&nbsp; &nbsp; def sum</div><div>&nbsp; &nbsp; &nbsp; &nbsp; reduce(0,:+)</div><div>&nbsp; &nbsp; end</div><div>end</div>	
-Ruby: iterate through characters in my_string	my_string.each_char do |char|<div>&nbsp; &nbsp; ....</div>	
-make a directory	mkdir&nbsp;	
-change to root dir	cd ~	
-up one directory	cd ..	
-see current dir	pwd	
-distroy a director	rmdir foo/bar	
-copy a file	cp foo.txt bar.txt	
-Write a method that takes an array and returns a new array with the 0th and 3rd element removed, without modifying the input, and using a single block	def delete_zero_and_three(array)<div>&nbsp; &nbsp; array.dup.tap do |new_array|</div><div>&nbsp; &nbsp; &nbsp; &nbsp; new_array.delete_at(3)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; new_array.delete_at(0)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; #careful, order matters!</div><div>&nbsp; &nbsp; end</div><div>end<br /><div><div><br /></div><div><br /></div><div>&nbsp;</div></div></div>	
-change bar.txt to foo.txt	mv bar.txt foo.txt	
-Ruby: say I make a Matrix class, and pos=[i,j]. I want to do matrix[pos] and get the corresponding entry. What do?	class Matrix<div>&nbsp; def [](pos)</div><div>&nbsp; &nbsp; row, column = pos</div><div>&nbsp; &nbsp; self[row][column]</div><div>&nbsp; end</div><div>end</div>	
-Ruby: make an array of the first 10 square numbers using Array.new	Array.new(10) { |index| (index +1 ) ** 2 }	
-What is the behavior of Hash.new with a block?	Hash.new {|hash,key| &nbsp; &nbsp; } #calls block when key is not found, but <b>does not assign the result to key</b>	
-p_string is a method that returns nil or a string. one line idiom for computing length of string , otherwise nil	(str = p_string) &amp;&amp; str.length	
-Ruby: make the cartesian product of two arrays (e.g [1,2] and [3,4] produce [[1,3],[1,4],[2,3],[2,4]])	[1,2,3].product([4,5,6])	
-Textmate: make a method quickly	type the name then shift-enter	
-textmate best way to open file	command-t then type file name	
-textmate add comment to block	command /	
-textmate: indent selection	command ]	
-textmate: unindent selection	command [	
-textmate: uncomment selection	command /	
-textmate: quickest way to replace all	1 select the text&nbsp;<div>2 command-e uses it for search</div><div>3 command-option f selects all</div><div>4 type the new thing</div>	
-Ruby: find the value of the first even number in my_enumerable	my_enumerable.find {|x| x.even?}	
-Textmate: you pressed escape to autocomplete, but the wrong thing comes up. What do?	keep pressing escape	
-I made a paren, but two were made with the cursor in between (). What is the quickest way to fix?	back - delete, fn-delete on laptop	
+Ruby: pop last element from my_array, store to a	a=my_array.pop
+Ruby: pop first element of an array	a=my_array.shift
+ruby pop element at position i of an array	a=my_array.delete_at(i)
+ruby delete elements of value x from array	my_array.delete(x) &nbsp; &nbsp; (returns x)
+Ruby create new hash with default value x	foo=Hash.new(x)
+Ruby test if a hash has a key x	my_hash.has_key?(x)
+Ruby: test if my_hash has x as a stored value	my_hash.has_value?(x)
+Ruby: test if my_hash is empty	my_has.empty?
+Ruby find the 3rd thru 10th element of my_array	my_array[2..9]
+Ruby: pop element at key i from a hash	a=my_hash.delete(i)<div>returns my_hash[i] and deletes this entry</div>
+Ruby method that called by My_class.new	initialize
+Ruby: make a new My_class object	My_class.new(foo)
+Ruby find &nbsp;number of even integers in my_array	my_array.count {|i| i % 2 ==0}
+Ruby: make an array that is [1,2,1,2....1,2] repeated 40 times	[1,2]*40
+Ruby: make an array that has all values common to two arrays, excluding duplicates	[3,1,1,2]&amp;[1,1,3,3,4]<div>=&gt;[3,1]</div>
+Ruby: delete all items that appear in array2 from array1	[1,1,2,2,3,3,4,5] - [1,2,4]<div>=&gt;[3,3,5]</div>
+add x to the end of my_array	my_array &lt;&lt; x
+concatenate array1 and array2	array1+array2
+Ruby double all members of an array in place	my_array.map! {|x| 2*x}
+Ruby add one to all memebers in an array, creating a new array	a=my_array.collect {|x| x+1}
+Ruby make an array of all unordered pairs in [1,2,3,4]	[1,2,3,4].combination(2).to_a<div>=&gt; [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]</div>
+Ruby: repeatedly iterate through elements of an array FOREVER	[1,2,3,4].cycle {|x| puts x}
+convienant way to iterate from 0 to my_array.length-1	my_array.each_index
+test whether my_array is empty	my_array.empty?
+find the first index in my_array which holds x	my_array.index(x)
+find the first index in my_array whose corresponding value is even	my_array.index {|x| x%2==0}
+delete all even elements from my_array	my_array.reject! {|x| x%2 == 0}
+reverse the order of my_array in place	my_array.reverse!
+select four items at random from my_array	my_array.sample(4)
+remove all duplicate values from my_array in place	my_array.uniq!
+put the elements of my_array in a random order	my_array.shuffle!
+What evals as false in Ruby?	nil and false
+find out if str contains "Rub"&nbsp;	str.include?("Rub")
+find first index of str at which "foo" appears	str.index("foo")
+Ruby: find the unique values in an array (or enumerable) that are even numbers	my_array.find_all {|x| x%2==0}.uniq &nbsp; &nbsp; or<div><span style=" font-style: normal; font-weight: normal;">my_array.select {|x| x%2==0}.uniq</span></div><div><br /></div>
+Ruby: Test whether all elements of my_array are even	my_array.all? {|x| x % 2 == 0 }&nbsp;
+get an entry from my_hash with default 20	my_hash.fetch(key,20)
+expression which returns 4 if x==3 and "goop" otherwise	x==3 ? 4 : "goop"
+check whether i is in (1..10)	(1..10) === i &nbsp; &nbsp;(other way around doesn't work)
+try three different methods of object a in order, setting c to the first non-nil thing that is returned (and skipping the remaining calls).	c ||= a.foo<div>c ||= a.bar</div><div>c ||= a.baz</div>
+Do a bunch of operations in a row to c, returning nil if you get nil at any point	<div>c= 1</div>c &amp;&amp;= f(c)<div>c &amp;&amp;= g(c)</div><div>c &amp;&amp;= h(c)</div>
+find the index of the first occurence of regex in string using an operator	string =~ regex
+pop a key value pair from a hash	my_hash.shift &nbsp;(returns a [key,value] pair)
+reverse lookup for a hash	my_hash.key(value) =&gt; a key for which my_hash[key]==value
+Convert a=[["a",3],["b",5]] to {"a" =&gt; 3, "b" =&gt;5}	Hash[a]
+Ruby make a method with add(3,4,5)==12 and add(3,2)==5&nbsp;	<div>def add(*list)</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>list.reduce(0,:+)</div><div>end</div>
+ruby suppose we have a function add that adds its arguments, e.g. add(3,4,5)=12. How to find the sum of my_array?	add(*my_array)
+make multiples(num), a method that returns an Enumerable object that yields all positive integers which are multiples of num	def multiples(num)<div>&nbsp;&nbsp; guys=Enumerator.new do |yielder|</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;i=1</div><div>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;loop {yielder&lt;&lt;i*num ; i+=1}</div><div>&nbsp;&nbsp; end</div><div>end</div><div><br /><div><br /><div><br /></div></div></div>
+find ascii code of 'a'	'a'.ord
+convert 65 to a char using ascii code	65.chr
+fill an array of length 100, each entry of index i is a random integer between 0 and i	Array.new(100)&nbsp;{|i| rand(i+1)}<div>or (0...100).map &nbsp;&nbsp;{|i| rand(i+1)}</div><div><br /></div>
+find the element of [1,5,4,3,2] whose cosine is highest	[1,5,4,3,2].max_by {|x| Math.cos(x)}
+multiply list1 and list2 pointwise	list1.zip(list2).map {|a,b| a*b}<div><br /></div><div>Note that list1.zip(list2) {|a,b| a*b} calls the block for each pair, but returns nill</div>
+sort my_array in place by absolute value	my_array.sort_by! {|x| x*x}
+remove whitespace from the front and back of a string	my_string.strip<div>" &nbsp; &nbsp; hello &nbsp; &nbsp; ".strip &nbsp; =&gt; "hello"</div><div>strip! &nbsp; is in place version</div>
+Ruby: my_array is an array of strings. Short way to reverse every string in my_array without explicitly writing a block.	my_array.map!(&amp;:reverse)
+inside a class, define four methods called "plus", "minus", "times", and "divide" which call "operate" with input :+, :-, :*, :/ respectively	<div><span class="Apple-tab-span" style="white-space:pre"> </span>opers={:plus =&gt; :+,:minus =&gt; :-,:times =&gt; :*,:divide =&gt; :/ }</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>opers.each do |key,value|</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space:pre"> </span>define_method(key) {operate(value)}</div><div><span class="Apple-tab-span" style="white-space:pre"> </span>end</div>
+Ruby: add a method to Array which computes the sum of an array	class Array<div>&nbsp; &nbsp; def sum</div><div>&nbsp; &nbsp; &nbsp; &nbsp; reduce(0,:+)</div><div>&nbsp; &nbsp; end</div><div>end</div>
+Ruby: iterate through characters in my_string	my_string.each_char do |char|<div>&nbsp; &nbsp; ....</div>
+make a directory	mkdir&nbsp;
+change to root dir	cd ~
+up one directory	cd ..
+see current dir	pwd
+distroy a directory	rmdir foo/bar
+copy a file	cp foo.txt bar.txt
+Write a method that takes an array and returns a new array with the 0th and 3rd element removed, without modifying the input, and using a single block	def delete_zero_and_three(array)<div>&nbsp; &nbsp; array.dup.tap do |new_array|</div><div>&nbsp; &nbsp; &nbsp; &nbsp; new_array.delete_at(3)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; new_array.delete_at(0)</div><div>&nbsp; &nbsp; &nbsp; &nbsp; #careful, order matters!</div><div>&nbsp; &nbsp; end</div><div>end<br /><div><div><br /></div><div><br /></div><div>&nbsp;</div></div></div>
+change bar.txt to foo.txt	mv bar.txt foo.txt
+Ruby: say I make a Matrix class, and pos=[i,j]. I want to do matrix[pos] and get the corresponding entry. What do?	class Matrix<div>&nbsp; def [](pos)</div><div>&nbsp; &nbsp; row, column = pos</div><div>&nbsp; &nbsp; self[row][column]</div><div>&nbsp; end</div><div>end</div>
+Ruby: make an array of the first 10 square numbers using Array.new	Array.new(10) { |index| (index +1 ) ** 2 }
+What is the behavior of Hash.new with a block?	Hash.new {|hash,key| &nbsp; &nbsp; } #calls block when key is not found, but <b>does not assign the result to key</b>
+p_string is a method that returns nil or a string. one line idiom for computing length of string , otherwise nil	(str = p_string) &amp;&amp; str.length
+Ruby: make the cartesian product of two arrays (e.g [1,2] and [3,4] produce [[1,3],[1,4],[2,3],[2,4]])	[1,2,3].product([4,5,6])
+Textmate: make a method quickly	type the name then shift-enter
+textmate best way to open file	command-t then type file name
+textmate add comment to block	command /
+textmate: indent selection	command ]
+textmate: unindent selection	command [
+textmate: uncomment selection	command /
+textmate: quickest way to replace all	1 select the text&nbsp;<div>2 command-e uses it for search</div><div>3 command-option f selects all</div><div>4 type the new thing</div>
+Ruby: find the value of the first even number in my_enumerable	my_enumerable.find {|x| x.even?}
+Textmate: you pressed escape to autocomplete, but the wrong thing comes up. What do?	keep pressing escape
+I made a paren, but two were made with the cursor in between (). What is the quickest way to fix?	back - delete, fn-delete on laptop
+Ruby: easiest way to get an array of ten distinct empty arrays.	Array.new(10) { Array.new } or<div>Array.new(10) { [] }</div>
+Ruby: pop four elements from the end of an array as an array	my_array.pop(4)
+Ruby: pop four elements from the beginning of an array as an array	my_array.shift(4)
+Ruby: take the first element of an array and put it on the end (in place)	<div>my_array.rotate!</div>
+Rspec: test if deck has 52 cards	expect(deck).to have(52).things
+rspec, check if subject(:hand) {Hand.new} method busted? returns true, if hand.points = 22	hand.stub(:points =&gt; 22)<div>expect(hand).to be_busted</div>
+rspec: check whether method foo.bar("3") returns an error with message "invalid input"	expect do<div>&nbsp; foo.bar("3")</div><div>end.to raise_error("invalid input")</div>
+rspec: check that hand.hit(deck) calls deck.take(1)	<div>hand = Hand.new</div>deck = double("deck")<div><div>deck.should_recieve(:take).with(1)</div></div><div><br /></div><div>hand.hit(deck)</div><div><br /></div>
+rspec: you need to generate a lot of hand objects for your test. What is a better alternative to a million let statements?	A helper method for constructing the hands
+Rspec. lets say hand.fill(deck) is only supposed to fill the hand if the deck has more than 10 cards otherwise it does nothing. deck.count returns the number of cards. Write a test that makes sure the hand looks at the deck and fails to call deck.take if there are 9 cards	<div>deck = double("deck")</div><div>deck.should_receive(:count).and_return(9)</div><div>deck.should_not_receive(:take)</div><div><br /></div>hand = Hand.new<div><br /></div><div>hand.fill(deck)<br /><div><br /></div></div>
+rspec: check if hand.return_cards(deck)<div>leaves hand.cards empty. This method is expected to call deck.return, but this need not be tested for.</div>	<div>deck = double("deck")</div>deck.stub(:return) &nbsp; &nbsp; #avoid error<div><br /><div>hand.return_cards(deck)</div><div>expect(hand.cards).to be_empty</div></div>
